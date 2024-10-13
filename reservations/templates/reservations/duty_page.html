@@ -1,0 +1,27 @@
+<!-- reservations/templates/reservations/duty_page.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Обязанности</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="{% url 'reservations:home' %}">iHubDepot</a>
+</nav>
+
+<main role="main" class="container">
+    <h1>Обязанности</h1>
+    <p>Здесь будет информация об обязанностях.</p>
+</main>
+
+<footer class="container">
+    <p>&copy; DK 2019-2020</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

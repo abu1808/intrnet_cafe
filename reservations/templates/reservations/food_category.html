@@ -1,0 +1,40 @@
+<!-- reservations/templates/reservations/food_category.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>{{ category|capfirst }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="{% url 'reservations:home' %}">Интернет Кафе</a>
+</nav>
+
+<main role="main" class="container" style="margin-top: 70px;">
+    <h1>{{ category|capfirst }}</h1>
+    <div class="row">
+        {% for item in food_items %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.price }} руб.</p>
+                    <a href="{% url 'reservations:order_food' %}" class="btn btn-primary">Заказать</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+<footer class="container">
+    <p>&copy; Интернет-кафе 2024</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

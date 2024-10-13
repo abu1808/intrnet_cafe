@@ -1,0 +1,32 @@
+<!-- reservations/templates/reservations/order_confirmation.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Подтверждение заказа</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="{% url 'reservations:home' %}">Интернет Кафе</a>
+</nav>
+
+<main role="main" class="container" style="margin-top: 70px;">
+    <h1>Подтверждение заказа</h1>
+    <div>
+        <h2>{{ food_item.name }}</h2>
+        <img src="{{ food_item.image.url }}" alt="{{ food_item.name }}" style="width: 200px; height: auto;">
+        <p>Количество: {{ quantity }}</p>
+        <p>Общая сумма: {{ total_price }} руб.</p>
+    </div>
+</main>
+
+<footer class="container">
+    <p>&copy; Интернет Кафе 2024</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

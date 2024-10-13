@@ -1,0 +1,169 @@
+{% comment %} <!-- reservations/templates/reservations/home.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Bootstrap contributors" />
+    <title>iHub Depot</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/float.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/offcanvas.css' %}" />
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="{% url 'reservations:home' %}">iHubDepot</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'reservations:home' %}">Главная <span class="sr-only">(текущая)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'reservations:duty-page' %}">Обязанности</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Поддержка</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Сообщество</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Аккаунты</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="{% url 'reservations:logout' %}">Сменить аккаунт</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Поиск" aria-label="Поиск" />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+        </form>
+    </div>
+</nav>
+
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Привет, {{ object.username }}!</h1>
+            <p>Это альфа-версия веб-платформы iHub для пользователей iHub и студенческих помощников. Платформа поддерживает удобство работы и учебы в iHub. Пусть ваш день начнется с улыбки :)</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Узнать больше &raquo;</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Обязанности</h2>
+                <p>Начните свои обязанности как защитник iHub. Помогайте поддерживать порядок в iHub с помощью нашей новой платформы для студентов и сотрудников. Зарегистрируйтесь сейчас и станьте героем нашей школы!</p>
+                <p>
+                    <a class="btn btn-secondary" href="{% url 'duties:duty-page' %}" role="button">Посмотреть детали &raquo;</a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>Поддержка</h2>
+                <p>Поддерживать iHub не всегда легко, но вы можете помочь нам, сообщая о проблемах в реальном времени. Мы предлагаем поддержку по аппаратным проблемам и утере вещей 12 часов в сутки, 7 дней в неделю.</p>
+                <p>
+                    <a class="btn btn-secondary" href="#" role="button">Посмотреть детали &raquo;</a>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>Сообщество</h2>
+                <p>Вы не одиноки в своих обязанностях. В случае чрезвычайной ситуации или недоступности, мы всегда готовы помочь. Попросите доверенного друга из сообщества защитников iHub заменить вас на один день.</p>
+                <p>
+                    <a class="btn btn-secondary" href="#" role="button">Посмотреть детали &raquo;</a>
+                </p>
+            </div>
+        </div>
+        <hr />
+    </div> <!-- /container -->
+</main>
+
+<footer class="container">
+    <p>&copy; DK 2019-2020</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"></script>')
+</script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+</html> {% endcomment %}
+
+
+
+
+
+
+<!-- reservations/templates/reservations/home.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Интернет-кафе</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="{% url 'reservations:home' %}">Интернет-кафе</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'reservations:home' %}">Главная <span class="sr-only">(текущая)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'reservations:order_food' %}">Заказать еду</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'reservations:order_history' %}">История заказов</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="foodDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Еда</a>
+                <div class="dropdown-menu" aria-labelledby="foodDropdown">
+                    <a class="dropdown-item" href="{% url 'reservations:food_category' 'Кофе' %}">Кофе</a>
+                    <a class="dropdown-item" href="{% url 'reservations:food_category' 'Десерт' %}">Десерт</a>
+                    {% comment %} <a class="dropdown-item" href="{% url 'reservations:food_category' 'Еда' %}">Еда</a> {% endcomment %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Добро пожаловать в Интернет-кафе{% if user.is_authenticated %}, {{ user.username }}!{% endif %}</h1>
+            <p>Это платформа, где вы можете заказать вкусную еду и отслеживать свою историю заказов. Пусть ваш день начнется с отличного настроения!</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="{% url 'reservations:order_food' %}" role="button">Заказать еду &raquo;</a>
+            </p>
+        </div>
+    </div>
+</main>
+
+<footer class="container">
+    <p>&copy; Интернет-кафе 2024</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
